@@ -1,23 +1,28 @@
-let randomNumber = 0;
+const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const lowerCase = "abcdefghijklmnopqrstuvwxyz";
+const number = "123467890";
+const symbol = "!@#$%^&*(){}[]";
+const allChar = upperCase + lowerCase + number + symbol;
 
-const Alphabet = "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOopPQqRrSsTtUuVvWwXxYyZz";
-const number = "1@2#3$4%5&6*7!809";
-const input = Alphabet+number;
-let output= "";
-for (let i = 1; i <= 12; i++) {
-output+=input[ (Math.floor(Math.random() * 50))];
-    }
+const passwordBox = document.getElementById("password");
+
 function Generate()
 {
-    document.getElementById("password").value=output;
+    let output = "";
+    output += upperCase[(Math.floor(Math.random() * upperCase.length))];
+    output += lowerCase[(Math.floor(Math.random() * lowerCase.length))];
+    output += number[(Math.floor(Math.random() * number.length))];
+    output += symbol[(Math.floor(Math.random() * symbol.length))];
+
+    while(12 > output.length)
+        output += allChar[(Math.floor(Math.random() * allChar.length))];
+
+    passwordBox.value = output;
 }
-function Copy() {
-    const passwordField = document.getElementById("password");
-    
-    // Select the text in the password field
-    passwordField.select();
-    passwordField.setSelectionRange(0, 99999); // For mobile devices
-    
-    // Copy the selected text to the clipboard
+function Copy() 
+{
+    passwordBox.select();
+    //passwordField.setSelectionRange(0, 99999); // For mobile devices
     document.execCommand("copy");
 }
+
