@@ -8,9 +8,9 @@ This is a simple password generator web application built using HTML, CSS, and J
 - [Usage](#usage)
 - [Installation](#installation)
 - [Contributing](#contributing)
-- 
+  
 ## Demo
-[Insert Demo Link Here]
+[https://ritwika-14.github.io/Password-Generator/]
 
 ## Features
 - Generate random passwords of variable length
